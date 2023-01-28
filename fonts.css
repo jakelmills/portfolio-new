@@ -1,0 +1,16 @@
+@font-face {
+  font-family: acma;
+  src: url('./fonts/acma/PPAcma-Medium.woff');
+}
+
+@font-face {
+  font-family: acma;
+  src: url('./fonts/acma/PPAcma-Bold.woff');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: acma;
+  src: url('./fonts/acma/PPAcma-Black.woff');
+  font-weight: black;
+}
