@@ -27,8 +27,6 @@ const prevSlide = () => {
   moveSlide(currentSlide)
 }
 
-console.log(slides);
-
 nextButton.addEventListener("click", function(){
   nextSlide()
 })
@@ -38,7 +36,6 @@ prevButton.addEventListener("click", function(){
 })
 
 document.addEventListener("keydown", function(e){
-  console.log(e.keyCode);
   const keyCode = e.keyCode
 
 

@@ -1,6 +1,6 @@
 body { 
   font-family: acma, helvetica;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 .container {
@@ -66,7 +66,11 @@ h1 {
   color: rgba(102,102,102, 0.3);
   text-decoration: none;
   transform: translateY(-50%);
+  transition: scale 0.3s;
+}
 
+.prev:hover, .next:hover {
+  scale: 0.9
 }
 .prev {
   left: 5%;
@@ -96,6 +100,13 @@ h1 {
   height: 720px;
   border: solid 12px black;
   overflow-y: scroll;
+  -ms-overflow-style: none; 
+  scrollbar-width: none; 
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.project-container::-webkit-scrollbar {
+  display: none;
 }
 
 .project-title {
@@ -106,7 +117,7 @@ h1 {
 }
 
 .project-title h2 {
-  font-size: 48px;
+  font-size: 56px;
   font-weight: black;
   padding-top: 12px;
   padding-bottom: 16px;
@@ -131,7 +142,7 @@ h1 {
   height: 400px;
   width: 90%;
   display: block;
-  margin: 24px auto;
+  margin: 24px auto 0 auto;
   border-radius: 5px;
   -webkit-box-shadow: 4px 6px 8px 0px rgba(102,102,102,0.25);
   -moz-box-shadow: 4px 6px 8px 0px rgba(102,102,102,0.25);
@@ -140,4 +151,23 @@ h1 {
 
 .project-image:hover {
   cursor: pointer;
+}
+
+.project-footer {
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon {
+  font-size: 32px;
+  color: black;
+  opacity: 0.5;
+  transition: scale 0.3s;
+  margin-right: 16px;
+}
+
+.icon:hover {
+  scale: 0.9
 }

@@ -2,8 +2,6 @@ import { Gradient } from './gradient.js'
 
 const gradientCanvas = document.querySelector('#gradient-canvas')
 
-console.log(gradientCanvas);
-
 const gradients = [
 'gradient-one', 'gradient-two', 'gradient-three'
 ]
