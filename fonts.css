@@ -14,3 +14,13 @@
   src: url('./fonts/acma/PPAcma-Black.woff');
   font-weight: black;
 }
+
+@font-face {
+  font-family: woodland;
+  src: url('./fonts/acma/PPWoodland-Regular.woff');
+}
+
+@font-face {
+  font-family: woodland;
+  src: url('./fonts/acma/PPWoodland-Bold.woff');
+}
