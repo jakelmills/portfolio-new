@@ -1,23 +1,85 @@
 import { Gradient } from './gradient.js'
 
 const gradientCanvas = document.querySelector('#gradient-canvas')
+const prevButton = document.querySelector('.prev')
+const nextButton = document.querySelector('.next')
 
 const gradients = [
 'gradient-one', 'gradient-two', 'gradient-three'
 ]
 
-const setColours = () => {
-  const index = Math.floor(Math.random() * (gradients.length))
-  const colours = gradients[index]
-  console.log(index, colours)
+let currentGradient = 0
+const numberOfGradients = gradients.length
+
+const setColours = (currentGradient) => {
+  const colours = gradients[currentGradient]
   gradientCanvas.classList.add(colours)
+
+  const gradient = new Gradient() 
+  gradient.initGradient('#gradient-canvas')
 }
 
-setColours()
+setColours(0)
 
-// Create your instance
-const gradient = new Gradient() 
 
-// Call `initGradient` with the selector to your canvas
-gradient.initGradient('#gradient-canvas')
 
+const removeGradientNext = (currentGradient) => {
+  if (currentGradient === gradients.length) {
+    gradientCanvas.classList.remove(gradients[numberOfGradients - 1])
+  } else {
+    gradientCanvas.classList.remove(gradients[currentGradient - 1])
+  }
+}
+
+const removeGradientPrev = (currentGradient) => {
+  if (currentGradient === gradients.length) {
+    gradientCanvas.classList.remove(gradients[numberOfGradients - 1])
+  } else {
+    gradientCanvas.classList.remove(gradients[currentGradient + 1])
+  }
+}
+
+const nextGradient = () => {
+  
+  currentGradient ++
+
+  removeGradientNext(currentGradient)
+
+  if (currentGradient > numberOfGradients - 1) {
+    currentGradient = 0
+  }
+
+  setColours(currentGradient)
+  
+}
+
+const prevGradient = () => {
+  console.log(currentGradient);
+  currentGradient --
+  if (currentGradient < 0) {
+    currentGradient = 2
+  }
+  removeGradientPrev(currentGradient)
+  setColours(currentGradient)
+}
+
+document.addEventListener("keydown", function(e){
+  const keyCode = e.keyCode
+
+
+  if (keyCode == 37) {
+    prevGradient()
+  }
+
+  if (keyCode == 39) {
+    nextGradient()
+  }
+})
+
+nextButton.addEventListener("click", function(){
+  nextGradient()
+})
+
+prevButton.addEventListener("click", function(){
+  prevGradient()
+})

@@ -56,7 +56,7 @@ h1 {
   font-size: 120px;
   color: black;
   text-align: center;
-  font-weight: black;
+  font-weight: 900;
 }
 
 .prev, .next {
@@ -102,7 +102,7 @@ h1 {
   overflow-y: scroll;
   -ms-overflow-style: none; 
   scrollbar-width: none; 
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
 .project-container::-webkit-scrollbar {
@@ -118,7 +118,7 @@ h1 {
 
 .project-title h2 {
   font-size: 56px;
-  font-weight: black;
+  font-weight: 900;
   padding-top: 12px;
   padding-bottom: 16px;
 }
@@ -138,8 +138,7 @@ h1 {
 }
 
 .project-image {
-  /* width: 90%; */
-  height: 400px;
+  height: 420px;
   width: 90%;
   display: block;
   margin: 24px auto 0 auto;
@@ -170,4 +169,12 @@ h1 {
 
 .icon:hover {
   scale: 0.9
+}
+
+/* MEDIA QUERIES */ 
+
+@media (max-width: 1080px) {
+  .project-container {
+    width: 90%;
+  }
 }

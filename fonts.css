@@ -12,7 +12,7 @@
 @font-face {
   font-family: acma;
   src: url('./fonts/acma/PPAcma-Black.woff');
-  font-weight: black;
+  font-weight: 900;
 }
 
 @font-face {
