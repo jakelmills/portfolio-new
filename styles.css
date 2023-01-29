@@ -26,17 +26,25 @@ body {
 }
 
 #gradient-canvas.gradient-two {
+  --gradient-color-1: #c1ff9b; 
+  --gradient-color-2: #fface4; 
+  --gradient-color-3: #ab87ff;  
+  --gradient-color-4: #f5ffc6;
+
+}
+
+#gradient-canvas.gradient-three {
   --gradient-color-1: #FE6860; 
   --gradient-color-2: #FE8A71; 
   --gradient-color-3: #D9BBAE;  
   --gradient-color-4: #F3C9BF;
 }
 
-#gradient-canvas.gradient-three {
-  --gradient-color-1: #c1ff9b; 
-  --gradient-color-2: #fface4; 
-  --gradient-color-3: #ab87ff;  
-  --gradient-color-4: #f5ffc6;
+#gradient-canvas.gradient-four {
+  --gradient-color-1: #c3e4ff; 
+  --gradient-color-2: #6ec3f4; 
+  --gradient-color-3: #eae2ff;  
+  --gradient-color-4: #b9beff;
 }
 
 main {
@@ -54,11 +62,21 @@ main {
   transition: left 1s;
 }
 
-h1 {
+.slide-1, .slide-2, .slide-3, .slide-4 {
+  position: relative;
+}
+
+.title {
   font-size: 120px;
   color: black;
   text-align: center;
   font-weight: 900;
+}
+
+.subline {
+  font-size: 40px;
+  text-align: center;
+  margin-top: 24px;
 }
 
 .swipe-msg {
@@ -108,8 +126,14 @@ h1 {
   overflow-y: scroll;
   -ms-overflow-style: none; 
   scrollbar-width: none; 
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.25);
+  /* border-radius: 10% 0 10% 0; */
 }
+
+.slide-3 .project-container {
+  /* border-radius: 0 10% 0 10%; */
+}
+
 
 .project-container::-webkit-scrollbar {
   display: none;
@@ -124,7 +148,7 @@ h1 {
 
 .project-title h2 {
   font-size: 56px;
-  font-weight: 900;
+  /* font-weight: 900; */
   padding-top: 12px;
   padding-bottom: 16px;
 }
@@ -138,7 +162,7 @@ h1 {
   margin-top: 24px;
   font-family: woodland;
   font-size: 24px;
-  font-weight: bold;
+  /* font-weight: bold; */
   text-align: center;
   width: 60%;
 }
@@ -178,6 +202,36 @@ h1 {
   scale: 0.9
 }
 
+.contact-title{
+  font-size: 80px;
+  position: absolute;
+  top: 10%;
+  width: 100%;
+}
+
+.git-link, .email{
+  font-family: woodland;
+  font-size: 32px;
+  color: black;
+}
+
+.git-link {
+  position: absolute;
+  top: 25%;
+}
+.email {
+  position: absolute;
+  top: 30%;
+  margin-top: 12px;
+}
+
+.thanks {
+  position: absolute;
+  bottom: 10%;
+  right: 10%;
+  text-align: right;
+  font-size: 60px;
+}
 /* MEDIA QUERIES */ 
 
 @media (max-width: 1080px) {
@@ -187,13 +241,27 @@ h1 {
 }
 
 @media (max-width: 920px) {
-  h1 {
+  .title {
     font-size: 96px;
   }
 }
 
+@media(max-width: 680px) {
+  .contact-title {
+    font-size: 56px
+  }
+
+  .git-link, .email{
+    font-size: 28px;
+  }
+
+  .thanks {
+    font-size: 48px;
+  }
+}
+
 @media (max-width: 560px) {
-  h1 {
+  .title {
     font-size: 72px
   }
 
@@ -216,6 +284,19 @@ h1 {
   .icon {
     font-size: 28px;
   }
+
+  .contact-title {
+    font-size: 48px;
+  }
+
+  .git-link, .email{
+    font-size: 24px;
+  }
+
+  .thanks {
+    font-size: 40px;
+  }
+
 }
 
 @media (max-width: 480px) {
@@ -237,6 +318,10 @@ h1 {
     text-align: right;
     margin-top: 48px;
     font-size: 18px
+  }
+
+  .subline {
+    font-size: 24px;
   }
 }
 

@@ -5,7 +5,7 @@ const prevButton = document.querySelector('.prev')
 const nextButton = document.querySelector('.next')
 
 const gradients = [
-'gradient-one', 'gradient-two', 'gradient-three'
+'gradient-one', 'gradient-two', 'gradient-three', 'gradient-four'
 ]
 
 let currentGradient = 0
