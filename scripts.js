@@ -83,3 +83,27 @@ nextButton.addEventListener("click", function(){
 prevButton.addEventListener("click", function(){
   prevGradient()
 })
+
+// mobile swipe
+
+let touchStartX = 0
+let touchEndX = 0
+    
+function checkDirection() {
+
+  if (touchEndX < touchStartX && (touchEndX - touchStartX) < -75 ) {
+    nextGradient()
+  }
+  if (touchEndX > touchStartX && (touchEndX - touchStartX) > 75) {
+    prevGradient()
+  }
+}
+
+document.addEventListener('touchstart', e => {
+  touchStartX = e.changedTouches[0].screenX
+})
+
+document.addEventListener('touchend', e => {
+  touchEndX = e.changedTouches[0].screenX
+  checkDirection()
+})
