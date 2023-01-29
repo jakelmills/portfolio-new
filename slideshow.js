@@ -47,3 +47,27 @@ document.addEventListener("keydown", function(e){
     nextSlide()
   }
 })
+
+// mobile swipe
+
+let touchStartX = 0
+let touchEndX = 0
+    
+function checkDirection() {
+
+  if (touchEndX < touchStartX && (touchEndX - touchStartX) < -75 ) {
+    nextSlide()
+  }
+  if (touchEndX > touchStartX && (touchEndX - touchStartX) > 75) {
+    prevSlide()
+  }
+}
+
+document.addEventListener('touchstart', e => {
+  touchStartX = e.changedTouches[0].screenX
+})
+
+document.addEventListener('touchend', e => {
+  touchEndX = e.changedTouches[0].screenX
+  checkDirection()
+})

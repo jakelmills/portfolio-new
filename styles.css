@@ -7,6 +7,8 @@ body {
   height: 100vh;
   width: 100vw;
   background-color: lightblue;
+  overflow: hidden;
+  position: relative;
 }
 
 #gradient-canvas {
@@ -57,6 +59,10 @@ h1 {
   color: black;
   text-align: center;
   font-weight: 900;
+}
+
+.swipe-msg {
+  visibility: hidden;
 }
 
 .prev, .next {
@@ -164,7 +170,8 @@ h1 {
   color: black;
   opacity: 0.5;
   transition: scale 0.3s;
-  margin-right: 16px;
+  margin-right: 8px;
+  margin-left: 8px;
 }
 
 .icon:hover {
@@ -176,5 +183,66 @@ h1 {
 @media (max-width: 1080px) {
   .project-container {
     width: 90%;
+  }
+}
+
+@media (max-width: 920px) {
+  h1 {
+    font-size: 96px;
+  }
+}
+
+@media (max-width: 560px) {
+  h1 {
+    font-size: 72px
+  }
+
+  .project-container {
+    width: 100%;
+  }
+
+  .project-image {
+    height: 240px;
+  }
+
+  .project-title h2 {
+    font-size:40px ;
+  }
+
+  .description {
+    font-size: 20px
+  }
+
+  .icon {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 64px;
+    line-height: 1.1;
+  }
+
+  .prev {
+    visibility: hidden;
+  }
+
+  .next {
+    visibility: hidden;
+  }
+
+  .swipe-msg {
+    visibility: visible;
+    text-align: right;
+    margin-top: 48px;
+    font-size: 18px
+  }
+}
+
+@media (max-height: 700px) {
+  .project-container {
+    height: 500px;
+    margin-top: 10px;
   }
 }
