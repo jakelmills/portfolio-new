@@ -1,5 +1,5 @@
 body { 
-  font-family: acma, helvetica;
+  font-family: acma, serif;
   overflow: hidden;
 }
 
@@ -69,14 +69,18 @@ main {
 .title {
   font-size: 120px;
   color: black;
-  text-align: center;
+  text-align: left;
   font-weight: 900;
+  margin-bottom: 8px;
+  margin-left: 36px;
+
 }
 
 .subline {
-  font-size: 40px;
-  text-align: center;
+  font-size: 36px;
+  text-align: left;
   margin-top: 24px;
+  margin-left: 36px;
 }
 
 .swipe-msg {
@@ -121,19 +125,14 @@ main {
 .project-container {
   width: 72%;
   margin: 20px auto 10px auto;
-  height: 720px;
-  border: solid 12px black;
+  height: 90vh;
+  border: solid 18px black;
   overflow-y: scroll;
   -ms-overflow-style: none; 
   scrollbar-width: none; 
   background-color: rgba(255, 255, 255, 0.25);
-  /* border-radius: 10% 0 10% 0; */
+  padding-bottom: 24px;
 }
-
-.slide-3 .project-container {
-  /* border-radius: 0 10% 0 10%; */
-}
-
 
 .project-container::-webkit-scrollbar {
   display: none;
@@ -143,14 +142,14 @@ main {
   width: 100%;
   display: flex;
   justify-content: center;
-  border-bottom: solid 12px black;
+  border-bottom: solid 18px black;
 }
 
 .project-title h2 {
   font-size: 56px;
-  /* font-weight: 900; */
-  padding-top: 12px;
-  padding-bottom: 16px;
+  font-weight: 900;
+  padding-top: 16px;
+  padding-bottom: 12px;
 }
 
 .project-content {
@@ -160,26 +159,20 @@ main {
 
 .description {
   margin-top: 24px;
-  font-family: woodland;
+  font-family: RightSerif, serif;
   font-size: 24px;
-  /* font-weight: bold; */
   text-align: center;
-  width: 60%;
+  width: 90%;
 }
 
 .project-image {
-  height: 420px;
   width: 90%;
+  aspect-ratio: 2/1;
   display: block;
   margin: 24px auto 0 auto;
-  border-radius: 5px;
   -webkit-box-shadow: 4px 6px 8px 0px rgba(102,102,102,0.25);
   -moz-box-shadow: 4px 6px 8px 0px rgba(102,102,102,0.25);
   box-shadow: 4px 6px 8px 0px rgba(102,102,102,0.25);
-}
-
-.project-image:hover {
-  cursor: pointer;
 }
 
 .project-footer {
@@ -196,6 +189,11 @@ main {
   transition: scale 0.3s;
   margin-right: 8px;
   margin-left: 8px;
+  position: fixed;
+}
+
+.icon .github {
+  bottom: 10%;
 }
 
 .icon:hover {
@@ -206,11 +204,10 @@ main {
   font-size: 80px;
   position: absolute;
   top: 10%;
-  width: 100%;
 }
 
 .git-link, .email{
-  font-family: woodland;
+  font-family: RightSerif, serif;
   font-size: 32px;
   color: black;
 }
@@ -270,7 +267,7 @@ main {
   }
 
   .project-image {
-    height: 240px;
+    aspect-ratio: 1.25/1;
   }
 
   .project-title h2 {
@@ -297,6 +294,11 @@ main {
     font-size: 40px;
   }
 
+  .project footer {
+    margin-top: 12px;
+    margin-bottom: 12px;
+  }
+
 }
 
 @media (max-width: 480px) {
@@ -317,17 +319,42 @@ main {
     visibility: visible;
     text-align: right;
     margin-top: 48px;
-    font-size: 18px
+    font-size: 18px;
+    font-family: RightSerif, serif;
   }
 
   .subline {
     font-size: 24px;
   }
+
+  .project-container {
+    border: solid 8px black;
+  }
+
+  .project-title {
+    border-bottom: solid 8px black;
+  }
+
+  /* .description {
+    width: 80%
+  } */
+
+  .project-image {
+    margin-top: 10px;
+  }
+
+  .git-link {
+    top:30%;
+  }
+
+  .email {
+    top: 35%;
+  }
 }
 
-@media (max-height: 700px) {
+/* @media (max-height: 700px) {
   .project-container {
     height: 500px;
     margin-top: 10px;
   }
-}
+} */
