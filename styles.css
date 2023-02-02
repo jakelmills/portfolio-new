@@ -28,7 +28,7 @@ body {
   justify-content: center;
   align-items: center;
   font-family: acma;
-  margin-top: 72px;
+  margin-top: 24px;
   border-radius: 36px;
   border: solid 1px white;
   animation: fadeIn 2s;
@@ -77,6 +77,7 @@ body {
   transition: scale 0.5s;
   border: solid 1px white;
   position: relative;
+  overflow: hidden;
 }
 
 .project:hover {
@@ -92,6 +93,12 @@ body {
   animation-fill-mode: forwards;
   transition: all 0.5s ease;
 }
+.project-one .promo-img {
+  height: 720px;
+  position: absolute;
+  right: -96px;
+  bottom: -240px;
+}
 
 .project-two {
   opacity: 0;
@@ -99,6 +106,12 @@ body {
   animation: fadeIn 2s;
   animation-delay: 1s;
   animation-fill-mode: forwards;
+}
+
+.project-two .promo-img {
+  position: absolute;
+  bottom: 0;
+  right: -40px;
 }
 
 .project-title {
@@ -157,4 +170,111 @@ footer {
   font-size: 64px;
   font-family: acma;
   font-weight: bold;
+}
+
+/* media queries */
+
+@media (max-width: 1080px) {
+  .projects {
+    flex-direction: column;
+  }
+
+  .project-two {
+    margin-top: 24px;
+  }
+
+  .project {
+    width: 100%;
+  }
+
+  .project-one .promo-img {
+    height: auto;
+    position: absolute;
+    right: -120px; 
+    bottom: -120px;
+  }
+
+  .project-two .promo-img {
+    position: absolute;
+    bottom: 0;
+    right: -56px;
+    height: 450px;
+    width: 720px;
+  }
+}
+
+@media (max-width: 680px) {
+  .hero .title {
+    font-size: 64px;
+  }
+
+
+  .footer-title, .thank-you {
+    font-size: 48px;
+  }
+
+  .project-one .promo-img {
+    bottom: -72px;
+    right: -96px;
+  }
+  
+}
+
+@media (max-width: 480px) {
+  .hero {
+    height: 320px;
+    margin-top: 12px;
+  }
+
+  #gradient-canvas {
+    height: 100%;
+  }
+
+  .hero .title {
+    font-size: 40px;
+  }
+
+  .hero .subline {
+    font-size: 16px;
+  }
+
+  .project {
+    height: 360px;
+  }
+
+  .project-title {
+    font-size: 32px;
+  }
+
+  .project-subline {
+    font-size: 16px;
+  }
+
+  .project-two .promo-img {
+    height: 280px;
+    width: 120%;
+    left: 0;
+    bottom: -30px;
+  }
+
+  footer {
+    height: 320px;
+  }
+
+  .footer-title, .thank-you {
+    font-size: 32px;
+  }
+
+  .footer-title {
+    width: 100%;
+    text-align: center;
+    margin: 32px 0 0 0;
+  }
+
+  .email-link {
+    margin: 20px 0 0 0;
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+  }
 }
