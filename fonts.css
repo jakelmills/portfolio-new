@@ -16,18 +16,12 @@
 }
 
 @font-face {
-  font-family: RightSerif;
-  src: url('./fonts/right-serif/ Right\ Serif\ -\ Medium.woff');
+  font-family: pangram-sans;
+  src: url('./fonts/pangram-sans/PPPangramSans-Regular.woff');
 }
 
 @font-face {
-  font-family: RightSerif;
-  src: url('./fonts/right-serif/ Right\ Serif\ -\ Bold.woff');
+  font-family: pangram-sans;
+  src: url('./fonts/pangram-sans/PPPangramSans-Bold.woff');
   font-weight: bold;
-}
-
-@font-face {
-  font-family: RightSerif;
-  src: url('./fonts/right-serif/ Right\ Serif\ -\ Light.woff');
-  font-weight: light;
 }

@@ -1,360 +1,280 @@
-body { 
-  font-family: acma, serif;
-  overflow: hidden;
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+body {
+  color: #333;
 }
 
 .container {
-  height: 100vh;
-  width: 100vw;
-  background-color: lightblue;
-  overflow: hidden;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.inner-container {
+  width: 80%;
+  margin: 0 auto;
   position: relative;
+}
+
+.hero {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: acma;
+  margin-top: 24px;
+  border-radius: 36px;
+  border: solid 1px white;
+  animation: fadeIn 2s;
 }
 
 #gradient-canvas {
   width:100%;
-  height:100%;
-  z-index: 0;
-  position:absolute;
+  height:50%;
+  --gradient-color-1: #4CD4B0; 
+  --gradient-color-2: #FFFCE6; 
+  --gradient-color-3: #F24D16;  
+  --gradient-color-4: #EDD834;
+  opacity: 0.5;
+  border-radius: 36px;
 }
 
-#gradient-canvas.gradient-one {
-  --gradient-color-1: #D1D5D8; 
-  --gradient-color-2: #3498DB; 
-  --gradient-color-3: #E74C3C;  
-  --gradient-color-4: #F1C40F;
-}
-
-#gradient-canvas.gradient-two {
-  --gradient-color-1: #c1ff9b; 
-  --gradient-color-2: #fface4; 
-  --gradient-color-3: #ab87ff;  
-  --gradient-color-4: #f5ffc6;
-
-}
-
-#gradient-canvas.gradient-three {
-  --gradient-color-1: #FE6860; 
-  --gradient-color-2: #FE8A71; 
-  --gradient-color-3: #D9BBAE;  
-  --gradient-color-4: #F3C9BF;
-}
-
-#gradient-canvas.gradient-four {
-  --gradient-color-1: #c3e4ff; 
-  --gradient-color-2: #6ec3f4; 
-  --gradient-color-3: #eae2ff;  
-  --gradient-color-4: #b9beff;
-}
-
-main {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.holder {
+.title-container {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 10000vw;
-  height: 100vh;
-  transition: left 1s;
 }
 
-.slide-1, .slide-2, .slide-3, .slide-4 {
-  position: relative;
-}
-
-.title {
-  font-size: 120px;
-  color: black;
-  text-align: left;
+.hero .title {
   font-weight: 900;
-  margin-bottom: 8px;
-  margin-left: 36px;
-
+  font-size: 96px;
+  width: 100%;
 }
 
-.subline {
-  font-size: 36px;
-  text-align: left;
+.hero .subline {
+  text-align: center;
+  width: 100%;
+  font-size: 24px;
+  margin-top: 20px;
+}
+
+.projects {
+  width: 100%;
   margin-top: 24px;
-  margin-left: 36px;
-}
-
-.swipe-msg {
-  visibility: hidden;
-}
-
-.prev, .next {
-  font-size: 80px;
-  position: absolute;
-  top:50%;
-  color: rgba(102,102,102, 0.3);
-  text-decoration: none;
-  transform: translateY(-50%);
-  transition: scale 0.3s;
-}
-
-.prev:hover, .next:hover {
-  scale: 0.9
-}
-.prev {
-  left: 5%;
-}
-
-.next {
-  right: 5%;
-}
-
-.holder > div {
-  float: left;
-  width: 100vw;
-  height: 100vh;
+  margin-bottom: 36px;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 }
 
-.slide-content-container {
-  width: 80%;
-  height: auto;
+.project {
+  width: 48%;
+  height: 560px;
+  border-radius: 36px;
+  transition: scale 0.5s;
+  border: solid 1px white;
+  position: relative;
+  overflow: hidden;
 }
 
-.project-container {
-  width: 72%;
-  margin: 20px auto 10px auto;
-  height: 90vh;
-  border: solid 18px black;
-  overflow-y: scroll;
-  -ms-overflow-style: none; 
-  scrollbar-width: none; 
-  background-color: rgba(255, 255, 255, 0.25);
-  padding-bottom: 24px;
+.project:hover {
+  cursor: pointer;
+  scale: 0.98;
 }
 
-.project-container::-webkit-scrollbar {
-  display: none;
+.project-one {
+  opacity: 0;
+  background-color: #D6F5EC;
+  animation: fadeIn 2s;
+  animation-delay: 0.5s;
+  animation-fill-mode: forwards;
+  transition: all 0.5s ease;
+}
+.project-one .promo-img {
+  height: 720px;
+  position: absolute;
+  right: -96px;
+  bottom: -240px;
+}
+
+.project-two {
+  opacity: 0;
+  background-color: #FED3C9;
+  animation: fadeIn 2s;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
+}
+
+.project-two .promo-img {
+  position: absolute;
+  bottom: 0;
+  right: -40px;
 }
 
 .project-title {
+  font-family: acma;
+  font-weight: bold;
+  font-size: 48px;
+  margin-top: 40px;
+  margin-left: 40px;
+}
+
+.project-subline {
+  margin-top: 8px;
+  margin-left: 40px;
+  font-family: pangram-sans;
+}
+
+footer {
+  opacity: 0;
   width: 100%;
-  display: flex;
-  justify-content: center;
-  border-bottom: solid 18px black;
+  height: 400px;
+  background-color: #FBF5D1;
+  border-radius: 36px;
+  margin-bottom: 48px;
+  border: solid 1px white;
+  position: relative;
+  animation: fadeIn 2s;
+  animation-delay: 1.5s;
+  animation-fill-mode: forwards;
 }
 
-.project-title h2 {
-  font-size: 56px;
-  font-weight: 900;
-  padding-top: 16px;
-  padding-bottom: 12px;
+.footer-title {
+  font-family: acma;
+  font-weight: bold;
+  font-size: 64px;
+  margin-top: 40px;
+  margin-left: 40px;
 }
 
-.project-content {
-  display: flex;
-  justify-content: center;
-}
-
-.description {
-  margin-top: 24px;
-  font-family: RightSerif, serif;
+.email-link {
+  margin-top: 16px;
+  margin-left: 40px;
+  font-family: pangram-sans;
   font-size: 24px;
-  text-align: center;
-  width: 90%;
 }
 
-.project-image {
-  width: 90%;
-  aspect-ratio: 2/1;
-  display: block;
-  margin: 24px auto 0 auto;
-  -webkit-box-shadow: 4px 6px 8px 0px rgba(102,102,102,0.25);
-  -moz-box-shadow: 4px 6px 8px 0px rgba(102,102,102,0.25);
-  box-shadow: 4px 6px 8px 0px rgba(102,102,102,0.25);
+.email-link a {
+  color: #333;
 }
 
-.project-footer {
-  height: 72px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.icon {
-  font-size: 32px;
-  color: black;
-  opacity: 0.5;
-  transition: scale 0.3s;
-  margin-right: 8px;
-  margin-left: 8px;
-  position: fixed;
-}
-
-.icon .github {
-  bottom: 10%;
-}
-
-.icon:hover {
-  scale: 0.9
-}
-
-.contact-title{
-  font-size: 80px;
+.thank-you {
   position: absolute;
-  top: 10%;
+  bottom: 0;
+  right: 0;
+  margin-right: 24px;
+  margin-bottom: 24px;
+  font-size: 64px;
+  font-family: acma;
+  font-weight: bold;
 }
 
-.git-link, .email{
-  font-family: RightSerif, serif;
-  font-size: 32px;
-  color: black;
-}
-
-.git-link {
-  position: absolute;
-  top: 25%;
-}
-.email {
-  position: absolute;
-  top: 30%;
-  margin-top: 12px;
-}
-
-.thanks {
-  position: absolute;
-  bottom: 10%;
-  right: 10%;
-  text-align: right;
-  font-size: 60px;
-}
-/* MEDIA QUERIES */ 
+/* media queries */
 
 @media (max-width: 1080px) {
-  .project-container {
-    width: 90%;
-  }
-}
-
-@media (max-width: 920px) {
-  .title {
-    font-size: 96px;
-  }
-}
-
-@media(max-width: 680px) {
-  .contact-title {
-    font-size: 56px
+  .projects {
+    flex-direction: column;
   }
 
-  .git-link, .email{
-    font-size: 28px;
+  .project-two {
+    margin-top: 24px;
   }
 
-  .thanks {
-    font-size: 48px;
-  }
-}
-
-@media (max-width: 560px) {
-  .title {
-    font-size: 72px
-  }
-
-  .project-container {
+  .project {
     width: 100%;
   }
 
-  .project-image {
-    aspect-ratio: 1.25/1;
+  .project-one .promo-img {
+    height: auto;
+    position: absolute;
+    right: -120px; 
+    bottom: -120px;
   }
 
-  .project-title h2 {
-    font-size:40px ;
+  .project-two .promo-img {
+    position: absolute;
+    bottom: 0;
+    right: -56px;
+    height: 450px;
+    width: 720px;
+  }
+}
+
+@media (max-width: 680px) {
+  .hero .title {
+    font-size: 64px;
   }
 
-  .description {
-    font-size: 20px
-  }
 
-  .icon {
-    font-size: 28px;
-  }
-
-  .contact-title {
+  .footer-title, .thank-you {
     font-size: 48px;
   }
 
-  .git-link, .email{
-    font-size: 24px;
+  .project-one .promo-img {
+    bottom: -72px;
+    right: -96px;
   }
-
-  .thanks {
-    font-size: 40px;
-  }
-
-  .project footer {
-    margin-top: 12px;
-    margin-bottom: 12px;
-  }
-
+  
 }
 
 @media (max-width: 480px) {
-  h1 {
-    font-size: 64px;
-    line-height: 1.1;
+  .hero {
+    height: 320px;
+    margin-top: 12px;
   }
 
-  .prev {
-    visibility: hidden;
+  #gradient-canvas {
+    height: 100%;
   }
 
-  .next {
-    visibility: hidden;
+  .hero .title {
+    font-size: 40px;
   }
 
-  .swipe-msg {
-    visibility: visible;
-    text-align: right;
-    margin-top: 48px;
-    font-size: 18px;
-    font-family: RightSerif, serif;
+  .hero .subline {
+    font-size: 16px;
   }
 
-  .subline {
-    font-size: 24px;
-  }
-
-  .project-container {
-    border: solid 8px black;
+  .project {
+    height: 360px;
   }
 
   .project-title {
-    border-bottom: solid 8px black;
+    font-size: 32px;
   }
 
-  /* .description {
-    width: 80%
-  } */
-
-  .project-image {
-    margin-top: 10px;
+  .project-subline {
+    font-size: 16px;
   }
 
-  .git-link {
-    top:30%;
+  .project-two .promo-img {
+    height: 280px;
+    width: 120%;
+    left: 0;
+    bottom: -30px;
   }
 
-  .email {
-    top: 35%;
+  footer {
+    height: 320px;
+  }
+
+  .footer-title, .thank-you {
+    font-size: 32px;
+  }
+
+  .footer-title {
+    width: 100%;
+    text-align: center;
+    margin: 32px 0 0 0;
+  }
+
+  .email-link {
+    margin: 20px 0 0 0;
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
   }
 }
-
-/* @media (max-height: 700px) {
-  .project-container {
-    height: 500px;
-    margin-top: 10px;
-  }
-} */

@@ -9,69 +9,41 @@
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="fonts.css">
     <link rel="stylesheet" href="styles.css">
-    <script src="https://kit.fontawesome.com/f9e32be613.js" crossorigin="anonymous"></script>
   </head>
   <body>
     <div class="container">
-      <canvas id="gradient-canvas" data-transition-in></canvas>
-      <header>
-        <nav>
-
-        </nav>
-      </header>
-
-      <main>
-        <div class="holder">
-          <div class="slide-1">
-            <div class="slide-content-container">
-              <h1 class="title">hey,</h1>
-              <h1 class="title">i'm jake</h1>
+      <div class="inner-container">
+        <header>
+          <div class="hero">
+            <canvas id="gradient-canvas" data-transition-in></canvas>
+            <div class="title-container">
+              <h1 class="title">hey, i'm jake</h1>
               <p class="subline">a junior front-end dev</p>
-              <p class="swipe-msg">swipe to see more -></p>
             </div>
-          </div>
-          <div class="slide-2">
-            <div class="slide-content-container">
-              <div class="project-container">
-                <div class="project-title">
-                  <h2>Topped Off</h2>
-                </div>
-                <div class="project-content">
-                  <p class="description">Topped off is a mobile drinking game built with React Native.</p>
-                </div>
-                <img src="https://picsum.photos/600/300/" alt="" class="project-image">
-                <img src="https://picsum.photos/600/300/" alt="" class="project-image">
-                <img src="https://picsum.photos/600/300/" alt="" class="project-image">
+          </header>
+          <main>
+            <div class="projects">
+              <div class="project project-one">
+                <h2 class="project-title">topped off</h2>
+                <p class="project-subline">a drinking game for iOS and Android</p>
+                <img src="./assets/topped-off/topped-off-mockup-1.png" alt="" class="promo-img">
+              </div>
+              <div class="project project-two">
+                <h2 class="project-title">love letters</h2>
+                <p class="project-subline">an AI powered love letter generator</p>
+                <img src="./assets/love-letters/love-letters-mockup-1.png" alt="" class="promo-img">
               </div>
             </div>
-          </div>
-          <div class="slide-3">
-            <div class="slide-content-container">
-              <div class="project-container">
-                <div class="project-title">
-                  <h2>Love Letters</h2>
-                </div>
-                <div class="project-content">
-                  <p class="description">Love Letters is an AI powered love letter generator built with NextJS and GPT-3.</p>
-                </div>
-                <img src="./assets/love-letters-1.png" alt="" class="project-image">
-                <img src="./assets/love-letters-2.png" alt="" class="project-image">     
-              </div>
-            </div>
-          </div>
-          <div class="slide-4 contact">
-            <div class="slide-content-container">
-              <h2 class="contact-title">Want to know more?</h2>
-              <p class="git-link">checkout my <a href="">github</a></p>
-              <a href="mailto: hello@jakemillsdev.com" class="email">send me an email</a>
-              <p class="thanks">thank you :)</p>
-            </div>
-          </div>
+          </main>  
+          <footer>
+            <h2 class="footer-title">want to know more?</h2>
+            <p class="email-link">why not send me an <a href="mailto: hello@jakemillsdev.com">email</a>?</p>
+            <p class="thank-you">thank you :)</p>
+          </footer>
         </div>
-        <a href="#" class="prev">&#10094;</a>
-        <a href="#" class="next">&#10095;</a>
-      </main>
-      
+
+
+      </div>
     </div>
       <script type="module" src="scripts.js" async defer></script>
       <script src="slideshow.js"></script>
