@@ -43,6 +43,7 @@ projectOneHover.addEventListener('click', () => {
 })
 
 projectOneMinimise.addEventListener('click', () => {
+  projectOneHover.classList.remove('hidden')
   projectOne.classList.remove('expanded')
 })
 
@@ -58,5 +59,6 @@ projectTwoHover.addEventListener('mouseout', () => {
 })
 
 projectTwoMinimise.addEventListener('click', () => {
+  projectTwoHover.classList.remove('hidden')
   projectTwo.classList.remove('expanded')
 })
