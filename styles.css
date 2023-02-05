@@ -80,9 +80,15 @@ body {
   overflow: hidden;
 }
 
-.project:hover {
+.project-hover-area {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  z-index: 50;
   cursor: pointer;
-  scale: 0.98;
 }
 
 .project-one {
@@ -106,12 +112,17 @@ body {
   animation: fadeIn 2s;
   animation-delay: 1s;
   animation-fill-mode: forwards;
+  transition: all 0.5s ease;
 }
 
 .project-two .promo-img {
   position: absolute;
   bottom: 0;
   right: -40px;
+}
+
+.promo-img {
+  transition: all 0.5s;
 }
 
 .project-title {
@@ -125,7 +136,96 @@ body {
 .project-subline {
   margin-top: 8px;
   margin-left: 40px;
+  font-size: 16px;
   font-family: pangram-sans;
+}
+
+.tech-stack {
+  margin-top: 16px;
+  margin-left: 40px;
+}
+
+.tech-tag {
+  font-family: pangram-sans;
+  display: inline;
+  background-color: rgba(255, 255, 255, 0.75);
+  border-radius: 10%;
+  padding: 4px 8px;
+  margin-right: 8px;
+
+}
+
+.expanded {
+  width: 90%;
+  height: auto;
+  z-index: 100; 
+}
+
+.project-images {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 48px;
+}
+
+.project-image {
+  opacity: 0;
+  transition: all 0.5s;
+  width: 95%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.project-image:nth-child(2) {
+  margin-top: -24px;
+}
+
+.project-two.expanded .promo-img {
+  right: -60px;
+}
+
+.project.expanded .promo-img {
+  opacity: 0;
+  z-index: -100;
+}
+
+.project.expanded .project-image {
+  opacity: 1;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.project-description {
+  opacity: 0;
+  font-family: pangram-sans;
+  color: #333;
+  font-size: 16px;
+  max-width: 30%;
+  margin-left: 40px;
+  margin-top: 36px;
+  transition: opacity 300ms;
+}
+
+.project.expanded .project-body {
+  visibility: visible;
+  overflow: scroll;
+}
+
+.project.expanded .project-description {
+  opacity: 1;
+}
+
+
+.minimise-btn {
+  font-size: 48px;
+  color: #333;
+  opacity: 0.5;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 48px;
 }
 
 footer {
@@ -217,12 +317,26 @@ footer {
     bottom: -72px;
     right: -96px;
   }
+
+  .tech-stack {
+    margin-bottom: 24px;
+  }
+
+  .project-description {
+    max-width: 90%;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .project-description:nth-child(1) {
+    margin-bottom: 24px;
+  }
   
 }
 
 @media (max-width: 480px) {
   .hero {
-    height: 320px;
+    height: 240px;
     margin-top: 12px;
   }
 
@@ -239,7 +353,11 @@ footer {
   }
 
   .project {
-    height: 360px;
+    height: 400px;
+  }
+
+  .project.expanded {
+    height: auto;
   }
 
   .project-title {
@@ -254,11 +372,15 @@ footer {
     height: 280px;
     width: 120%;
     left: 0;
-    bottom: -30px;
+    bottom: -35px;
+  }
+
+  .minimise-btn {
+    font-size: 32px;
   }
 
   footer {
-    height: 320px;
+    height: 240px;
   }
 
   .footer-title, .thank-you {

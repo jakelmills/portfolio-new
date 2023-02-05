@@ -5,10 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Portfolio</title>
     <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" >
+    <meta name="viewport" content="width=device-width, initial-scale=1" >
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="fonts.css">
     <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/f9e32be613.js" crossorigin="anonymous"></script>
   </head>
   <body>
     <div class="container">
@@ -23,16 +24,51 @@
           </header>
           <main>
             <div class="projects">
-              <div class="project project-one">
-                <h2 class="project-title">topped off</h2>
-                <p class="project-subline">a drinking game for iOS and Android</p>
+              <div class="project project-one ">
+                <div class="project-hover-area"></div>
+                <div class="project-header">
+
+                  <h2 class="project-title">topped off</h2>
+                  <p class="project-subline">a drinking game for iOS and Android</p>
+                  <ul class="tech-stack">
+                    <li class="tech-tag">React Native</li>
+                    <li class="tech-tag">Javascript</li>
+                  </ul>
+                </div>
+                <div class="project-body">
+                  <p class="project-description">topped off is a drinking game for iOS and Android built with React Native. players complete challenges to score points and the first player to top off all of their drinks wins!</p>
+                  <div class="project-images">
+                    <img src="./assets/topped-off/topped-off-mockup-5.png" alt="" class="project-image">
+                  </div>
+                </div>
                 <img src="./assets/topped-off/topped-off-mockup-1.png" alt="" class="promo-img">
+                <div class="project-footer">
+                  <i class="fa-solid fa-chevron-up minimise-btn"></i>
+                </div>
               </div>
               <div class="project project-two">
-                <h2 class="project-title">love letters</h2>
-                <p class="project-subline">an AI powered love letter generator</p>
-                <img src="./assets/love-letters/love-letters-mockup-1.png" alt="" class="promo-img">
-              </div>
+                <div class="project-hover-area"></div>
+                <div class="project-header">
+
+                  <h2 class="project-title">love letters</h2>
+                  <p class="project-subline">an AI powered love letter generator</p>
+                  <ul class="tech-stack">
+                    <li class="tech-tag">NextJS</li>
+                    <li class="tech-tag">GPT-3</li>
+                  </ul>
+                </div>
+                <div class="project-body">
+                  <p class="project-description">love letters is a love letter generator that uses GPT-3 to allow users to generate custom love letters, whether that's for a special anniversary with their partner or even their dog!</p>
+                  <div class="project-images">
+                    <img src="./assets/love-letters/love-letters-mockup-1.png" alt="" class="project-image">
+                    <img src="./assets/love-letters/love-letters-mockup-2.png" alt="" class="project-image">
+                  </div>
+                  <div class="project-footer">
+                    <i class="fa-solid fa-chevron-up minimise-btn"></i>
+                  </div>
+                </div>
+                  <img src="./assets/love-letters/love-letters-mockup-1.png" alt="" class="promo-img">
+                </div>
             </div>
           </main>  
           <footer>
@@ -46,6 +82,5 @@
       </div>
     </div>
       <script type="module" src="scripts.js" async defer></script>
-      <script src="slideshow.js"></script>
   </body>
 </html>
