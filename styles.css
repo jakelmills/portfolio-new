@@ -156,7 +156,7 @@ body {
 }
 
 .expanded {
-  width: 60%;
+  width: 70%;
   height: auto;
   z-index: 100; 
 }
@@ -245,7 +245,6 @@ body {
 
 .project-link {
   font-family: pangram-sans;
-  font-weight: bold;
   color: #333;
   margin-bottom: 24px;
 }
